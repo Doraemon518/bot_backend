@@ -1,3 +1,4 @@
+
 const express = require('express')
 const router = express.Router()
 require('dotenv').config();
@@ -20,12 +21,13 @@ router.post('/', async (req, res) => {
       customer: {
         name: "Test User",
         email: "nomail@gmail.com",
-        contact: "7428723247"
+        contact: "9999999999"
       },
       
       notes: {
         telegram_user_id: req.body.chat_id,
-        plan: req.body.amount
+        plan: req.body.amount,
+        username:req.body.username
       },
       notify: {
         sms: false,
@@ -40,8 +42,9 @@ router.post('/', async (req, res) => {
     res.json(paymentLink);
 
   } catch (err) {
-    console.error("❌ Error creating payment link:", err);
+    console.error(" Error creating payment link:", err);
     res.status(500).json({ error: "Failed to create payment link" });
+    await db.collection('users').doc(req.body.chat_id.toString()).delete();
   }
 })
 
