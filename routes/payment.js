@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
       customer: {
         name: "Test User",
         email: "nomail@gmail.com",
-        contact: "9999999999"
+        contact: "9876543210"
       },
       
       notes: {

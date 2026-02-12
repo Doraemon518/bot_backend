@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 let crypto = require('crypto')
-let domain = process.env.domain;
+let domain = process.env.domainbot;
 require('dotenv').config();
 // middleware that is specific to this router
 
