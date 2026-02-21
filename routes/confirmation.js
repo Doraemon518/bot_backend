@@ -27,7 +27,7 @@ router.post('/', express.raw({ type: 'application/json' }), async (req, res) => 
       status: 'payment_done',
     }, { merge: true });
 
-    let b = await fetch(`${domain}/bot/paymentdone`, {
+    let b = await fetch(`${domainbot}/bot/paymentdone`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
