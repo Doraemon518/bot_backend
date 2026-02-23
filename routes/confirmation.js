@@ -11,6 +11,7 @@ let domain = process.env.domainbot;
 
 // define the home page route
 router.post('/', express.raw({ type: 'application/json' }), async (req, res) => {
+  console.log("payment validation request received from razorpay");
   let secret = process.env.Secret;
   let rawBody = req.body;
   let signature = req.headers["x-razorpay-signature"]
