@@ -39,6 +39,7 @@ router.post('/', express.raw({ type: 'application/json' }), async (req, res) => 
         secretOwn: process.env.SecretOwn,
       })
     })
+    console.log("POST sent");
 
   }
   else if (digest != signature) {
