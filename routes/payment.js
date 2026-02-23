@@ -4,6 +4,8 @@ const router = express.Router()
 require('dotenv').config();
 let razorpay = require('razorpay')
 router.use(express.json())
+let db = require('../firebase.js')
+
 let instance = new razorpay({
   key_id: process.env.Key_Id,
   key_secret: process.env.Key_Secret,
