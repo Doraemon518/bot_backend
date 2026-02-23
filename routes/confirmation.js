@@ -4,6 +4,7 @@ const router = express.Router()
 let crypto = require('crypto')
 require('dotenv').config();
 let domain = process.env.domainbot;
+let db = require('../firebase.js')
 
 // middleware that is specific to this router
 
